@@ -19,7 +19,8 @@ jobs:
       uses: DamianReeves/write-file-action@v1.2
       with:
         path: ./src/client_id.txt
-        contents: ${{ env.KEYMASTER_CLIENT_ID }}
+        contents: 'hello'
+#        contents: ${{ env.KEYMASTER_CLIENT_ID }}
         write-mode: overwrite
 
     - name: Install Rust support for ARM64 & prepare environment
@@ -56,7 +57,8 @@ jobs:
       uses: DamianReeves/write-file-action@v1.2
       with:
         path: ./src/client_id.txt
-        contents: ${{ env.KEYMASTER_CLIENT_ID }}
+        contents: 'hello'
+#        contents: ${{ env.KEYMASTER_CLIENT_ID }}
         write-mode: overwrite
 
     - name: Prepare build environment
@@ -110,7 +112,8 @@ jobs:
       uses: DamianReeves/write-file-action@v1.2
       with:
         path: ./src/client_id.txt
-        contents: ${{ env.KEYMASTER_CLIENT_ID }}
+        contents: 'hello'
+#        contents: ${{ env.KEYMASTER_CLIENT_ID }}
         write-mode: overwrite
 
     - name: Build
