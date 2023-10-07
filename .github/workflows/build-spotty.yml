@@ -69,6 +69,8 @@ jobs:
         mkdir -p releases/i386-linux
         mkdir -p releases/aarch64-linux
         mkdir -p releases/arm-linux
+        mkdir -p releases/armv7-linux-androideabi
+        mkdir -p releases/arm-linux-androideabi
 
     - name: Build i686
       run: |
@@ -94,6 +96,16 @@ jobs:
       run: |
         ./cross build --release --target=arm-unknown-linux-musleabi
         cp target/arm-unknown-linux-musleabi/release/spotty releases/arm-linux/spotty
+
+    - name: Build ARMv7 android
+      run: |
+        ./cross build --release --target=armv7-linux-androideabi
+        cp target/armv7-linux-androideabi/release/spotty releases/armv7-linux-androideabi/spotty
+
+    - name: Build ARM android
+      run: |
+        ./cross build --release --target=arm-linux-androideabi
+        cp target/arm-linux-androideabi/release/spotty releases/arm-linux-androideabi/spotty
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v3
